@@ -1,0 +1,4 @@
+client/node_modules
+sanity-project/node_modules
+server/node_modules
+.env

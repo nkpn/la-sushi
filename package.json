@@ -1,0 +1,16 @@
+{
+  "name": "la-sushi",
+  "version": "1.0.0",
+  "description": "Webstore with sushi",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikita Ilin, Valeria Achkan",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkpn/la-sushi"
+  }
+}

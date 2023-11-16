@@ -1,0 +1,31 @@
+.slick-slide {
+    height: 300px !important;
+
+    @media screen and (min-width: $tablet) {
+        height: 400px !important;
+    }
+
+    @media screen and (min-width: $desktop) {
+        height: 450px !important;
+    }
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0px !important;
+}
+
+.slick-dots {
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 3px !important;
+
+    display: block !important;
+
+    width: 98% !important;
+}
+
+.slick-dots li {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 2px !important;
+}

@@ -13,3 +13,14 @@ export async function fetchAllProductsData(){
         console.log(error)
     }
 }
+
+export async function fetchCustomerData(email){
+    const query = encodeURIComponent(`*[_type == 'customer'][email == '${email}']`);
+
+    try {
+        const response = await fetch(`${URL}${query}`);
+        return response.json();
+    } catch (error) {
+        console.log(error)
+    }
+}

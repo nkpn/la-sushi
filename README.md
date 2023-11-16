@@ -2,6 +2,6 @@
 
 Welcome to La Sushi!
 
-**Site link:** [Zirka Real Estate](http://zirka.agency/)
+**Site link:** [La Sushi](http://)
 
-Zirka Real Estate is a web store designed to help users plan fantastic asian food in Spain.
+La Sushi is a web store designed to help users plan fantastic Asian food in Spain.

@@ -1,4 +1,19 @@
-@import './components/common';
+@import './base/variables';
+@import './base/fonts';
+@import './base/placeholders';
+@import './base/visually-hidden';
+
+@import './common/common';
+
 @import './components/header';
 @import './components/form';
+@import './components/slider';
+@import './components/not-found';
 @import './common/footer';
+
+@import './pages/product';
+@import './pages/category';
+@import './pages/404';
+@import './pages/homepage';
+@import './pages/about'
+

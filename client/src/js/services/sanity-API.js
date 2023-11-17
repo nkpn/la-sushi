@@ -2,6 +2,7 @@
 const PROJECT_ID = 'p4kn0cp6';
 const DATASET = 'production';
 const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=`;
+const TEMPORARY_TOKEN = '';
 
 export async function fetchAllProductsData(){
     const query = encodeURIComponent(`*[_type == 'product']{name, acute, category, price, description, weight, _id, "imageUrl": image.asset->url}`);
@@ -24,3 +25,33 @@ export async function fetchCustomerData(email){
         console.log(error)
     }
 }
+
+export async function createCustomer(customerData){
+    const query = encodeURIComponent(`*[_type == 'customer'][email == '${email}']`);
+    const queryOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${TEMPORARY_TOKEN}`
+        }
+    }
+    const body = {
+        "mutations": [
+            {"create" : {
+                    //? uuid();
+                    // "_id" : 
+                    "_type": "customer",
+                    "name": body.name,
+                    "email" : body.email,
+                    "password": body.password,
+                 }
+            }
+        ]
+    }
+
+    try {
+        fetch(`${URL}`, queryOptions, body)
+    } catch (error) {
+        console.log(error)
+    }
+}   

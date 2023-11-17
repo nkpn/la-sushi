@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import '../base/variables';
 
 @mixin h1{
     font-family: $font-accent;
     font-size: 36px;
     font-weight: 700;
     line-height: 46px;
-    color: $dark-grey;
+    color: $grey-dark;
 }
 
 h1, .h1{

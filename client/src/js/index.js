@@ -1,3 +1,5 @@
+import '../styles/main.scss'
+
 import { fetchAllProductsData, fetchCustomerData } from "./services/sanity-API";
 
 try {

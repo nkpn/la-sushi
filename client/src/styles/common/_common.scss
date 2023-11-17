@@ -1,7 +1,6 @@
 @import '../base/visually-hidden';
 @import '../base/variables';
 @import '../base/placeholders';
-@import './container';
 @import './buttons';
 
 * {
@@ -45,6 +44,8 @@ ul {
 
 img {
     display: block;
+    width: 100%;
+    height: auto;
 }
 
 .visually-hidden {

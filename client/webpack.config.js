@@ -4,7 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	devtool: 'eval-source-map',
 	entry: {
-		index: './src/js/index.js',
+		index: './src/js/pages/homepage.js',
+		product: './src/js/pages/product.js',
+		sushiList: './src/js/pages/sushiList.js',
+		contacts: './src/js/pages/contacts.js',
 	},
 	output: {
 		filename: '[name].bundle.js',
@@ -56,6 +59,42 @@ module.exports = {
 				useShortDoctype: true,
 			},
 			chunks: ['index'],
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'product.html',
+			template: './src/product.html',
+			minify: {
+				collapseWhitespace: true,
+				removeComments: true,
+				removeRedundantAttributes: true,
+				removeScriptTypeAttributes: true,
+				useShortDoctype: true,
+			},
+			chunks: ['product'],
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'sushi-list.html',
+			template: './src/sushi-list.html',
+			minify: {
+				collapseWhitespace: true,
+				removeComments: true,
+				removeRedundantAttributes: true,
+				removeScriptTypeAttributes: true,
+				useShortDoctype: true,
+			},
+			chunks: ['sushiList'],
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'contacts.html',
+			template: './src/contacts.html',
+			minify: {
+				collapseWhitespace: true,
+				removeComments: true,
+				removeRedundantAttributes: true,
+				removeScriptTypeAttributes: true,
+				useShortDoctype: true,
+			},
+			chunks: ['contacts'],
 		}),
 	],
 	devServer: {

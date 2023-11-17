@@ -1,0 +1,10 @@
+.primary-button{
+    padding: 12px 48px;
+    background-color: $orange;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    display: inline-flex;
+    border: 0;
+    @include button-text;
+}

@@ -1,13 +1,14 @@
 import '../styles/main.scss'
-
 import { fetchAllProductsData, fetchCustomerData } from "./services/sanity-API";
 
-try {
-  const data = await fetchAllProductsData();
-  console.log(data.result);
-} catch (error) {
-  console.log(error)
-}
+import homepage from './pages/homepage';
+
+// TODO Logic to show
+// if Home page
+// if (window.location.href == '/'){
+  homepage();
+// }
+
 
 try {
   const email = 'test@gmail.com'

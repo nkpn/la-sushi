@@ -1,3 +1,31 @@
 h1, .h1{
-    @include h1();
+    @include h1;
+}
+
+h2{
+    @include h2;
+}
+
+h3{ 
+    @include h3;
+}
+
+h4{ 
+    @include h4;
+}
+
+p{
+    @include body;
+}
+
+.caption{
+    @include caption;
+}
+
+.subtitle{
+    @include subtitle;
+}
+
+.button{
+    @include button-text;
 }

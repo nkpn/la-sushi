@@ -9,6 +9,60 @@
     color: $grey-dark;
 }
 
-h1, .h1{
-    @include h1;
+@mixin h2{
+    font-family: $font-accent;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 49px;
+    color: $grey-dark;
+}
+
+@mixin h3{
+    font-family: $font-accent;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+    color: $grey-dark;
+}
+
+@mixin h4{
+    font-family: $font-accent;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    color: $grey-dark;
+}
+
+@mixin subtitle{
+    font-family: $font-accent;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $grey-dark;
+}
+
+@mixin body{
+    font-family: $font-accent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $grey-dark;
+}
+
+@mixin button-text{
+    font-family: $font-accent;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $grey-dark;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+@mixin caption{
+    font-family: $font-accent;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: $grey-dark;
 }

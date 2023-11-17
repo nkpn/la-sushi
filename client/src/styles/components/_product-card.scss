@@ -1,0 +1,52 @@
+.product-card{
+    position: relative;
+    max-width: 384px;
+
+    .product-image{
+        border-radius: 16px;
+    }
+
+    .product-title{
+        margin-top: 20px;
+        @include h4;
+    }
+
+    .product-description{
+        margin-top: 12px;
+        @include body;
+    }
+
+    .product-weight{
+        margin-top: 12px;
+        @include caption;
+    }
+
+    .product-label{
+        position: absolute;
+        left: 0;
+        top: 16px;
+        padding: 8px 16px;
+        background-color: $orange;
+        border-radius: 20px;
+        justify-content: center;
+        text-align: center;
+        display: inline-flex;
+        border: 0;
+        @include button-text;
+    }
+
+    .price-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .product-price{
+        @include h2;
+    }
+
+    .primary-button{
+
+    }
+}

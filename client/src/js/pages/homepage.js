@@ -1,5 +1,7 @@
 import '../../styles/main.scss';
 import { fetchAllProductsData } from '../services/sanity-API';
+import $ from 'jquery';
+import 'slick-carousel'
 
 async function getAllRecommendProducts(){
     try {
@@ -74,13 +76,21 @@ function insertBestSellers(data){
         productCard.appendChild(wrapper);
         list.appendChild(productCard);
     })
-
-    console.log(list)
     productCardsWrapper.appendChild(list);
 }
 
 function HomePageInit(){
     getAllRecommendProducts();
+
+    // slick slider for mobile only  (<768px)
+    if ($(window).width() < 768){
+        $('.reviews-list').slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 400
+        })
+    }
 }
 
 HomePageInit();

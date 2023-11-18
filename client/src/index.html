@@ -11,7 +11,7 @@
   <title>La Sushi</title>
 </head>
 
-<body>
+<body class="homepage">
   <header class="header">
     <button type="button" class="menu-button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
       <img class="icon-menu" src="./images/icons/menu.svg">
@@ -67,8 +67,11 @@
 
     <section class="best-sellers-section">
       <div class="container">
-        <label class="button lng-best-sellers-rec">Recommended</label>
-        <h2 class="subheading lng-best-sellers-h2">The best salmon dishes</h2>
+        <div class="best-sellers-heading">
+          <h2 class="subheading lng-best-sellers-h2">The best salmon dishes</h2>
+          <label class="button lng-best-sellers-rec">Recommended</label>
+        </div>
+        
         <div class="product-cards"></div>
         <!-- Test product card -->
         <!-- <ul class="best-sellers-list">
@@ -92,7 +95,7 @@
       <div class="container">
         <h3 class="subheading lng-promo-h3">Promotions</h3>
         <div class="promo-wrapper">
-          <div class="first-promo">
+          <div class="promo-block first-promo">
               <div class="sale-wrapper">
                 <p class="sale-badge">-30%</p>
                 <p class="sale-text lng-promo-1-sale-text">Every tuesday</p>
@@ -100,7 +103,7 @@
               <p class="promo-text lng-promo-1-p">For all dishes with eel and green peas</p>
               <a href="./sushi-list.html" class="primary-button">Take a look</a>
           </div>
-          <div class="first-promo">
+          <div class="promo-block second-promo">
             <div class="sale-wrapper">
               <p class="sale-badge">-30%</p>
               <p class="sale-text lng-promo-1-sale-text">Every tuesday</p>
@@ -108,7 +111,7 @@
             <p class="promo-text lng-promo-1-p">For all dishes with eel and green peas</p>
             <a href="./sushi-list.html" class="primary-button">Take a look</a>
           </div>
-          <div class="first-promo">
+          <div class="promo-block third-promo">
             <div class="sale-wrapper">
               <p class="sale-badge">-30%</p>
               <p class="sale-text lng-promo-1-sale-text">Every tuesday</p>
@@ -119,14 +122,125 @@
         </div>
       </div>
     </section>
+
+    <section class="reviews-section">
+      <div class="container">
+        <h3 class="subheading lng-reviews-h3">Reviews</h3>
+        <ul class="reviews-list">
+          <li class="review-item">
+            <div class="avatar">
+              <img src="./images/homepage/user1.png" alt="user">
+              <p class="username">User </br>Name</p>
+            </div>
+            <div class="stars">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+            </div>
+            <p class="review-text lng-review-1">"Супер суші та роли! Довго шукали найсмачніші суші і ось нарешті знайшли!"</p>
+          </li>
+
+          <li class="review-item">
+            <div class="avatar">
+              <img src="./images/homepage/user2.png" alt="user">
+              <p class="username">User </br>Name 2</p>
+            </div>
+            <div class="stars">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+            </div>
+            <p class="review-text lng-review-2">"Дуже смачно, дуже свіжі продукти! З багатьох суші що пробував у Києві та регіонах, а повірте, я гурман, скажу що це ТОП за смаком та сервісом"</p>
+          </li>
+
+          <li class="review-item">
+            <div class="avatar">
+              <img src="./images/homepage/user3.png" alt="user">
+              <p class="username">User </br>Name 3</p>
+            </div>
+            <div class="stars">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+            </div>
+            <p class="review-text lng-review-3">"Вчора було друге знайомство з "БагатоЛосося" у вигляді поке. Це було дуже смачно. Тепер я покеман)) Молодці, не опускайте планку!"</p>
+          </li>
+
+          <li class="review-item">
+            <div class="avatar">
+              <img src="./images/homepage/user4.png" alt="user">
+              <p class="username">User </br>Name 4</p>
+            </div>
+            <div class="stars">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+                <img src="./images/icons/star.svg">
+            </div>
+            <p class="review-text lng-review-4">"Це було дуже смачно. Тепер я покеман))Молодці, не опускайте планку!"</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about-us-section">
+      <div class="container">
+        <h2 class="h2 lng-about-us-h2">СЕО текст - це новий погляд на ресторан</h2>
+        <p class="text lng-text-1">Не маючи залу для обслуговування клієнтів, ми, в першу чергу, сфокусовані на двох речах - ідеальна кухня та швидка доставка. Особливу увагу ми приділяємо тому, щоб у стравах було багато лосося, а пакування дозволяло отримати страви так, як їх задумав шеф-кухар. Будемо раді, якщо ви станете нашим постійним клієнтом, та будемо вдячні за відгуки про нашу роботу та якість страв.</p>
+
+        <div class="features">
+          <div class="features-item">
+            <img src="./images/icons/timer-icon.svg" alt="fish" class="features-icon">
+            <h4 class="lng-features-h4-1">Свіжість</h4>
+            <p class="lng-features-p1">Ми гарантуємо свіжість продуктів і не використовуємо заморожену рибу.</p>
+          </div>
+          <div class="features-item">
+            <img src="./images/icons/fi-ss-time-check.svg" alt="fast deliivery" class="features-icon">
+            <h4 class="lng-features-h4-2">Швидкість</h4>
+            <p class="lng-features-p2">Доставимо ваше замовлення за 45 хвилин, свіжим та смачним.</p>
+          </div>
+          <div class="features-item">
+            <img src="./images/icons/star-orange.svg" alt="fish" class="features-icon">
+            <h4 class="lng-features-h4-3">Якість</h4>
+            <p class="lng-features-p3">Використовуємо лише якісні продукти від перевірених постачальників.</p>
+          </div>
+        </div>
+
+        <div class="about-shef">
+          <img src="./images/homepage/shef.png" class="shef-image" alt="shef">
+          <div class="about-shef-info">
+            <h4 class="shef-title lng-shef-h4">Мороз Вадим - шеф-кухар БагатоЛосося</h4>
+            <p class="shef-text lng-shef-p">«Я працюю у сфері кулінарії вже більш ніж 10 років та спеціалізуюсь на рибних стравах. Я впевнений, що важливим є не стаж роботи, а досвід. А досвід та вміння можна отримати лише тоді, коли не стоїш на місці. Саме тому я постійно в пошуках нових технік, смаків та віянь в кулінарії. Разом з командою ми втілюємо ці враження та ідеї, створюючи надзвичайні страви з правильно підібраним балансом свіжих овочів та великою кількістю риби. Адже наша мета - щодня робити смачні, свіжі страви, за якими ви будете повертатися знову і знову.</br></br>Смачного!»</p>
+          </div>
+        </div>
+
+        <h3 class="subheading lng-about-us-h3">Паназійські страви в ресторані БагатоЛосося</h3>
+        <p class="text lng-text-2">Зголодніли? Пропонуємо вам насолодитися чудовим смаком паназійських страв у Києві. Екзотичні та поживні – їх кожен може замовити додому або в офіс. Ви отримаєте справжнє задоволення, споживаючи суші та роли, різноманітні східні страви чи іншу, не менш апетитну їжу. Ми гарантуємо її свіжість т якість і, швидко доставимо з ресторану та прямісінько до вашого столу. Зазирніть до каталогу на сайті БагатоЛосося, щоб замовити свою улюблену страву!</p>
+        <p class="text lng-text-3">Наш ресторан пропонує своїм клієнтам величезну кількість страв паназійської, східної кухні. Ми готуємо їх швидко та смачно, тож навіть найвимогливіший гурман знайде знайде за своїм смаком, наприклад, зазирнувши до розділу «Суші та роли». Тут ви побачите японські делікатеси за доступними цінами. Сайт має просту й інтуїтивно зрозумілу структуру, тож щоб оформити замовлення з доставкою додому вистачить всього декількох хвилин.</p>
+        <p class="text lng-text-4">В ресторані БагатоЛосося працюють професіонали. Кухарі й сушисти знають безліч оригінальних і традиційних рецептів. Вони працюють на кухні зі свіжими продуктами,з яких готують страви відмінної якості. Якісне приладдя й сучасна кухонна техніка, а також досвід і кулінарний хист – запорука ідеального результату. Ви отримаєте свої суші чи роли з ресторану в Києві максимально швидко, адже злагоджена робота фахівців з БагатоЛосося дозволяє виконати замовлення та здійснити його доставку дуже оперативно. З нами жоден клієнт не залишиться голодним!</p>
+      </div>
+    </section>
+
+    <div class="contact-us-button">
+      <img src="./images/icons/send-24.svg" alt="contact us!">
+      <p>Ми на звʼязку</br>
+        та готові допомогти</p>
+    </div>
   </main>
 
   <footer class="footer">
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
 </body>
 
 </html>

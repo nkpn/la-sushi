@@ -1,0 +1,129 @@
+@import '../base/variables';
+@import '../base/placeholders';
+
+.footer {
+    background-color: $black;
+}
+
+.footer-container {
+    padding: 32px;
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        justify-content: space-between;
+        padding: 34px;
+    }
+}
+
+.wrapper {
+    max-width: 177px;
+    margin: 0 auto;
+    text-align: center;
+
+    @media screen and (min-width: $desktop) {
+        margin: 0;
+    }
+}
+
+.wrapper--footer {
+
+    @media screen and (min-width: $desktop) {
+
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: end;
+        gap: 14px;
+    }
+}
+
+.logo-footer {
+    display: inline-block;
+    fill: $white;
+}
+
+.caption {
+    @include body;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $white;
+
+    margin-top: 12px;
+}
+
+.links-overlay {
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        gap: 24px;
+    }
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        gap: 24px;
+        margin: 0;
+    }
+
+}
+
+.contacts-link {
+    @include subtitle;
+    color: $white;
+    line-height: 20px;
+    letter-spacing: -0.13px;
+}
+
+.socialNets-list {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    margin-top: 16px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media screen and (min-width: $desktop) {
+        gap: 24px;
+        margin: 0;
+    }
+}
+
+.socialNets-item {
+    width: 32px;
+    height: 32px;
+
+    @media screen and (min-width: $desktop) {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.site-nav--footer {
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+        display: block;
+    }
+}
+
+.nav-item--link--footer {
+    @include caption;
+    color: $white;
+    line-height: 20px;
+    letter-spacing: -0.13px;
+    text-transform: uppercase;
+}
+
+.nav-item--footer:first-child {
+    & .nav-item--link--footer {
+        color: $orange;
+    }
+}

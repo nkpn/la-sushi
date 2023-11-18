@@ -33,6 +33,7 @@
         display: inline-flex;
         border: 0;
         @include button-text;
+        font-family: $font-primary;
     }
 
     .price-wrapper{

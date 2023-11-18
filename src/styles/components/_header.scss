@@ -151,6 +151,15 @@
     }
 }
 
+.header-buttons {
+    display: inline-flex;
+    gap: 16px;
+
+    @media screen and (min-width: $desktop) {
+        margin-left: 26px;
+    }
+}
+
 .cart-button {
     width: 48px;
     height: 48px;
@@ -160,8 +169,23 @@
     border-radius: 100px;
     background: rgba(212, 211, 208, 0.20);
 
+    // @media screen and (min-width: $desktop) {
+    //     margin-left: 16px;
+    // }
+}
+
+.auth-button {
+    display: none;
+
     @media screen and (min-width: $desktop) {
-        margin-left: 26px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+
+        border: 0;
+        border-radius: 100px;
+        background: rgba(212, 211, 208, 0.20);
     }
 }
 

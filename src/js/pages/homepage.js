@@ -27,7 +27,7 @@ function insertBestSellers(data) {
 		productCard.classList.add('product-card');
 
 		if (product.isTopSeller) {
-			const label = document.createElement('label');
+			const label = document.createElement('p');
 			label.classList.add('product-label');
 			label.textContent = 'Best Seller';
 			productCard.appendChild(label);

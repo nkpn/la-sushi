@@ -1,0 +1,53 @@
+.productDetails-card {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.productDetails-label {
+    @include caption;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: $orange;
+    border-radius: 20px;
+    border: 0;
+    color: $white;
+
+    &--spicy {
+        margin-bottom: 4px;
+    }
+}
+
+.productDetails-name {
+    @include h2;
+    margin-bottom: 16px;
+}
+
+.productDetails-photo {
+    margin-bottom: 16px;
+
+}
+
+.productDetails-weight {
+    @include body;
+    margin-bottom: 16px;
+}
+
+.productDetails-price {
+    @include h2;
+
+}
+
+.productDetails-button {
+    width: 100%;
+    margin-bottom: 16px;
+
+}
+
+.productDetails-description {
+    @include body;
+
+}

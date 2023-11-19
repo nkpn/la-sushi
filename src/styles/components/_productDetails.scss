@@ -1,15 +1,68 @@
 .productDetails-card {
     padding-top: 20px;
     padding-bottom: 40px;
+
+    @media screen and (max-width: 767px) {
+        max-width: 500px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+}
+
+.productDetails-container {
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 545px;
+    }
+}
+
+.productDetails-photo {
+    display: none;
+
+
+    @media screen and (min-width: $tablet) {
+        display: block;
+        width: calc((100% - 44px) * 0.4);
+        max-width: 505px;
+
+
+    }
+
+    &--mobile {
+        display: none;
+        width: 100%;
+        margin-bottom: 16px;
+
+        overflow: hidden;
+
+        @media screen and (max-width: 767px) {
+            display: block;
+
+        }
+    }
+}
+
+.productDetails-content {
+    @media screen and (min-width: $tablet) {
+        width: calc((100% - 44px) * 0.6);
+        display: flex;
+        flex-direction: column;
+
+    }
 }
 
 .productDetails-label {
     @include caption;
 
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    max-width: fit-content;
     padding: 8px 16px;
     background-color: $orange;
     border-radius: 20px;
@@ -18,29 +71,39 @@
 
     &--spicy {
         margin-bottom: 4px;
+
+        .spicy-icon {
+            width: 18px;
+        }
     }
 }
 
 .productDetails-name {
     @include h2;
     margin-bottom: 16px;
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 8px;
+    }
 }
-
-.productDetails-photo {
-    width: 100%;
-    margin-bottom: 16px;
-
-    overflow: hidden;
-}
-
 
 .productDetails-weight {
     @include body;
     margin-bottom: 16px;
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 24px;
+    }
+
 }
 
 .productDetails-price {
     @include h2;
+
+    @media screen and (min-width: $tablet) {
+        order: 5;
+        margin-bottom: 20px;
+    }
 
 }
 
@@ -48,9 +111,19 @@
     width: 100%;
     margin-bottom: 16px;
 
+    @media screen and (min-width: $tablet) {
+        max-width: fit-content;
+        order: 6;
+    }
+
+
 }
 
 .productDetails-description {
     @include body;
 
+    @media screen and (min-width: $tablet) {
+        order: 4;
+        margin-bottom: 24px;
+    }
 }

@@ -5,7 +5,7 @@ const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASE
 const TEMPORARY_TOKEN = '';
 
 export async function fetchAllProductsData(){
-    const query = encodeURIComponent(`*[_type == 'product']{nameEN, nameES, acute, category, price, descriptionEN, descriptionES, weight, isTopSeller,_id, "imageUrl": image.asset->url}`);
+    const query = encodeURIComponent(`*[_type == 'product']{nameEN, nameES, isSpicy, category, price, descriptionEN, descriptionES, weight, isTopSeller,_id, "imageUrl": image.asset->url}`);
 
     try {
         const response = await fetch(`${URL}${query}`);
@@ -16,7 +16,7 @@ export async function fetchAllProductsData(){
 }
 
 export async function fetchProductData(id){
-    const query = encodeURIComponent(`*[_type == 'product' && _id == '${id}']{nameEN, nameES, acute, category, price, descriptionEN, descriptionES, weight, isTopSeller,_id, "imageUrl": image.asset->url}`);
+    const query = encodeURIComponent(`*[_type == 'product' && _id == '${id}']{nameEN, nameES, isSpicy, category, price, descriptionEN, descriptionES, weight, isTopSeller,_id, "imageUrl": image.asset->url}`);
 
     try {
         const response = await fetch(`${URL}${query}`);

@@ -1,17 +1,20 @@
 import '../../styles/main.scss';
 import '../components/menu';
 import { fetchAllProductsData, fetchProductData } from '../services/sanity-API';
+import { getProducts } from '../services/sanity-client';
 import $ from 'jquery';
 import 'slick-carousel'
 
 async function getAllRecommendProducts() {
 	try {
 		const data = await fetchAllProductsData();
-		insertBestSellers(data.result);
+		console.log(data)
+		insertBestSellers(data);
 	} catch (error) {
 		console.log(error);
 	}
 }
+
 
 
 

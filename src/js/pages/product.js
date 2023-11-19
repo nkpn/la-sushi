@@ -13,7 +13,7 @@ const recommendedProductsEl = document.querySelector(
 async function getAllRecommendedProducts() {
 	try {
 		const data = await fetchAllProductsData();
-		renderRecommendedProducts(data.result);
+		renderRecommendedProducts(data);
 	} catch (error) {
 		console.log(error);
 	}

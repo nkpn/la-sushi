@@ -200,7 +200,7 @@ body:has(.menu-container.is-open) {
 }
 
 .contact-tel {
-    @include button-text;
+    @include caption-accent;
     color: $orange;
     font-size: 16px;
 

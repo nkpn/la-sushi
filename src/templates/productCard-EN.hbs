@@ -1,5 +1,8 @@
+{{#each this}}
 <li class="product-card">
-    <p class="product-label">{{this.isTopSeller}}</p>
+    {{#if this.isTopSeller}}
+    <p class="product-label">Best Seller</p>
+    {{/if}}
     <img class="product-image" alt="{{this.nameEN}}" src="{{this.imageUrl}}">
     <h4 class="product-title">{{this.nameEN}}</h4>
     <p class="product-description">{{this.descriptionEN}}</p>
@@ -9,3 +12,4 @@
         <p class="primary-button">Order</p>
     </div>
 </li>
+{{/each}}

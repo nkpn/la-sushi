@@ -24,6 +24,11 @@
 
 }
 
+body:has(.menu-container.is-open) {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
 .menu-container.is-open .logo {
     @media screen and (max-width: $desktop) {
         fill: $white;
@@ -31,11 +36,9 @@
 }
 
 .menu-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 48px;
     height: 48px;
+    padding: 12px;
 
     background-color: transparent;
     border: 0;
@@ -52,6 +55,11 @@
 
 .menu-button.is-open .icon-cross {
     display: block;
+    position: fixed;
+    top: 24px;
+    left: 29px;
+    width: 24px;
+    height: 24px;
     z-index: 3;
 
 }
@@ -79,6 +87,8 @@
             padding: 12px 32px 40px;
             background-color: $black;
         }
+
+
     }
 
     @media screen and (min-width: $desktop) {

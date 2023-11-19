@@ -1,4 +1,5 @@
 import '../../styles/main.scss';
+import '../components/menu';
 import $ from 'jquery';
 import 'slick-carousel';
 

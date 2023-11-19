@@ -1,27 +1,29 @@
-.product-card{
+.product-card {
     position: relative;
     max-width: 384px;
+    margin-right: auto;
+    margin-left: auto;
 
-    .product-image{
+    .product-image {
         border-radius: 16px;
     }
 
-    .product-title{
+    .product-title {
         margin-top: 20px;
         @include h4;
     }
 
-    .product-description{
+    .product-description {
         margin-top: 12px;
         @include body;
     }
 
-    .product-weight{
+    .product-weight {
         margin-top: 12px;
         @include caption;
     }
 
-    .product-label{
+    .product-label {
         position: absolute;
         left: -10px;
         top: 16px;
@@ -36,18 +38,16 @@
         font-family: $font-primary;
     }
 
-    .price-wrapper{
+    .price-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 20px;
     }
 
-    .product-price{
+    .product-price {
         @include h2;
     }
 
-    .primary-button{
-
-    }
+    // .primary-button {}
 }

@@ -1,6 +1,6 @@
 import '../../styles/main.scss';
 import '../components/menu';
-import { fetchAllProductsData } from '../services/sanity-API';
+import { fetchAllProductsData, fetchProductData } from '../services/sanity-API';
 import $ from 'jquery';
 import 'slick-carousel'
 
@@ -12,6 +12,8 @@ async function getAllRecommendProducts() {
 		console.log(error);
 	}
 }
+
+
 
 // TODO Add language logic
 

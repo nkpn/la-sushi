@@ -15,6 +15,32 @@ export async function fetchAllProductsData(){
     }
 }
 
+export async function fetchProductData(id){
+    const query = encodeURIComponent(`*[_type == 'product' && _id == '${id}']{nameEN, nameES, acute, category, price, descriptionEN, descriptionES, weight, isTopSeller,_id, "imageUrl": image.asset->url}`);
+
+    try {
+        const response = await fetch(`${URL}${query}`);
+        return response.json();
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+//* example of usage:
+async function getProductInfo(id){
+	
+	try {
+		const data = await fetchProductData(id);
+		console.log('data about the product: ', data)
+	} catch (error) {
+		console.log(error);
+	}
+}
+
+getProductInfo('1d87c793-3b02-4332-bcc7-f990edb39fe4')
+//* end of example
+
+
 export async function fetchCustomerData(email){
     const query = encodeURIComponent(`*[_type == 'customer'][email == '${email}']`);
 

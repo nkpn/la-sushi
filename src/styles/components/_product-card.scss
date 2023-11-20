@@ -3,14 +3,21 @@
     max-width: 384px;
     margin-right: auto;
     margin-left: auto;
+    pointer-events: all;
 
     .product-image {
         border-radius: 16px;
+        pointer-events: none;
+    }
+
+    .product-content {
+        pointer-events: none;
     }
 
     .product-title {
         margin-top: 20px;
         @include h4;
+
     }
 
     .product-description {
@@ -55,5 +62,8 @@
         @include h2;
     }
 
-    // .primary-button {}
+    .product-button {
+        pointer-events: all;
+
+    }
 }

@@ -1,17 +1,17 @@
 {{#each this}}
-<li class="product-card" data->
-    <a href="">
+<li class="product-card" data-productUrl="{{this.customUrl}}">
     {{#if this.isTopSeller}}
     <p class="product-label">Best Seller</p>
     {{/if}}
     <img class="product-image" alt="{{this.nameEN}}" src="{{this.imageUrl}}">
+    <div class="product-content">
     <h4 class="product-title">{{this.nameEN}}</h4>
     <p class="product-description">{{this.descriptionEN}}</p>
     <p class="product-weight">{{this.weight}}</p>
     <div class="price-wrapper">
         <p class="product-price">{{this.price}}</p>
-        <p class="primary-button">Order</p>
+        <p class="primary-button product-button">Order</p>
     </div>
-    </a>
+    </div>
 </li>
 {{/each}}

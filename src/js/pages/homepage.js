@@ -1,24 +1,54 @@
 import '../../styles/main.scss';
 import '../components/menu';
-import { fetchAllProductsData, fetchProductData } from '../services/sanity-API';
+import {
+	fetchAllProductsData,
+	fetchProductDataById,
+} from '../services/sanity-API';
 import { getProducts } from '../services/sanity-client';
 import $ from 'jquery';
 import 'slick-carousel';
 import { renderProductList } from '../components/rendering';
+import onProductCardClick from '../components/on-productCard';
 
 const bestSellersContainer = document.querySelector('.best-sellers-list');
 
 async function getAllRecommendProducts() {
 	try {
 		const data = await fetchAllProductsData();
-
-		renderProductList(bestSellersContainer, data.result);
-
+		console.log(data);
+		renderProductList(bestSellersContainer, data);
 	} catch (error) {
 		console.log(error);
 	}
 }
 
+async function getProductInfo(id) {
+	try {
+		const data = await fetchProductDataById(id);
+		console.log('data about the product: ', data);
+	} catch (error) {
+		console.log(error);
+	}
+}
+
+getProductInfo('1d87c793-3b02-4332-bcc7-f990edb39fe4');
+
+function HomePageInit() {
+	getAllRecommendProducts();
+	bestSellersContainer.addEventListener('click', onProductCardClick);
+
+	// slick slider for mobile only  (<768px)
+	if ($(window).width() < 768) {
+		$('.reviews-list').slick({
+			infinite: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			speed: 400,
+		});
+	}
+}
+
+HomePageInit();
 
 // TODO Add language logic
 
@@ -85,30 +115,3 @@ async function getAllRecommendProducts() {
 //     })
 //     productCardsWrapper.appendChild(list);
 // }
-
-async function getProductInfo(id) {
-	try {
-		const data = await fetchProductData(id);
-		console.log('data about the product: ', data);
-	} catch (error) {
-		console.log(error);
-	}
-}
-
-getProductInfo('1d87c793-3b02-4332-bcc7-f990edb39fe4');
-
-function HomePageInit() {
-	getAllRecommendProducts();
-
-	// slick slider for mobile only  (<768px)
-	if ($(window).width() < 768) {
-		$('.reviews-list').slick({
-			infinite: false,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			speed: 400,
-		});
-	}
-}
-
-HomePageInit();

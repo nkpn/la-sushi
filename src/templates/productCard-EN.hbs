@@ -1,5 +1,6 @@
 {{#each this}}
-<li class="product-card">
+<li class="product-card" data->
+    <a href="">
     {{#if this.isTopSeller}}
     <p class="product-label">Best Seller</p>
     {{/if}}
@@ -11,5 +12,6 @@
         <p class="product-price">{{this.price}}</p>
         <p class="primary-button">Order</p>
     </div>
+    </a>
 </li>
 {{/each}}

@@ -65,20 +65,36 @@
     </div>
   </header>
 
-  <main class="product">
+  <main>
+
+    <div class="container">
+      <ul class="navigation">
+        <li class="navigation-item"><a class="navigation-link" href="">Home</a></li>
+        <li class="navigation-item"><a class="navigation-link" href="">Sushi</a></li>
+        <li class="navigation-item"><a class="navigation-link navigation-link--current" href="">Spicy salmon</a></li>
+      </ul>
+    </div>
+
     <section class="productDetails-card">
       <div class="container productDetails-container">
-        <div class="productDetails-label productDetails-label--spicy"><img src="./images/icons/spicy.svg" alt=""> Гостре
-        </div>
-        <h2 class="productDetails-name">Гострий лосось і манго</h2>
         <div class="productDetails-photo">
           <img src="./images/sushi.png" alt="product name">
         </div>
-        <p class="productDetails-weight">345 / 50 / 20 / 17 г</p>
-        <p class="productDetails-price">31.99</p>
-        <button class="primary-button productDetails-button" type="button">Order</button>
-        <p class="productDetails-description">Рис, філе лосося, крем-сир, манго, спайсі соус (кунжутне масло),
-          мікрогрін, водорості норі. Соєвий соус, імбир, васабі.</p>
+        <div class="productDetails-content">
+          <div class="productDetails-label productDetails-label--spicy"><img class="spicy-icon"
+              src="./images/icons/spicy.svg" alt="">
+            Гостре
+          </div>
+          <h2 class="productDetails-name">Гострий лосось і манго</h2>
+          <div class="productDetails-photo--mobile">
+            <img src="./images/sushi.png" alt="product name">
+          </div>
+          <p class="productDetails-weight">345 / 50 / 20 / 17 г</p>
+          <p class="productDetails-price">31.99</p>
+          <button class="primary-button productDetails-button" type="button">Order</button>
+          <p class="productDetails-description">Рис, філе лосося, крем-сир, манго, спайсі соус (кунжутне масло),
+            мікрогрін, водорості норі. Соєвий соус, імбир, васабі.</p>
+        </div>
       </div>
     </section>
     <section class="recommended">

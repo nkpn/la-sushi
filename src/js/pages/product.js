@@ -3,25 +3,17 @@ import '../components/menu';
 import $ from 'jquery';
 import 'slick-carousel';
 import { fetchAllProductsData } from '../services/sanity-API';
-import productCardEN from '/src/templates/productCard-EN.hbs';
+import { renderProductList } from '../components/rendering';
 
 const productDetailsEl = document.querySelector('.productDetails-container');
-const recommendedProductsEl = document.querySelector(
+export const recommendedProductsContainer = document.querySelector(
 	'.recommendedProducts-list'
 );
 
-async function getAllRecommendedProducts() {
+async function getRecommendedProducts() {
 	try {
 		const data = await fetchAllProductsData();
-		renderRecommendedProducts(data);
-	} catch (error) {
-		console.log(error);
-	}
-}
-
-function renderRecommendedProducts(data) {
-	try {
-		recommendedProductsEl.innerHTML = productCardEN(data);
+		renderProductList(recommendedProductsContainer, data.result);
 
 		// slick slider for mobile only  (<768px)
 		if ($(window).width() < 768) {
@@ -38,16 +30,6 @@ function renderRecommendedProducts(data) {
 }
 
 function ProductPageInit() {
-	getAllRecommendedProducts();
-
-	// // slick slider for mobile only  (<768px)
-	// if ($(window).width() < 768) {
-	// 	$('.recommendedProducts-list').slick({
-	// 		infinite: false,
-	// 		slidesToShow: 1,
-	// 		slidesToScroll: 1,
-	// 		speed: 400,
-	// 	});
-	// }
+	getRecommendedProducts();
 }
 ProductPageInit();

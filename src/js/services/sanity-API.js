@@ -4,33 +4,53 @@ const DATASET = 'production';
 const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=`;
 const TEMPORARY_TOKEN = '';
 
-export async function fetchAllProductsData(){
-    const query = encodeURIComponent(`*[_type == 'product']{nameEN, nameES, isSpicy, category, price, descriptionEN, descriptionES, weight, isTopSeller,_id, "imageUrl": image.asset->url}`);
+import {createClient} from '@sanity/client';
 
-    try {
-        const response = await fetch(`${URL}${query}`);
-        return response.json();
-    } catch (error) {
-        console.log(error)
-    }
+// documentation
+// https://www.npmjs.com/package/@sanity/client
+
+export const client = createClient({
+    projectId: 'p4kn0cp6',
+    dataset: 'production',
+    useCdn: true, // set to `false` to bypass the edge cache
+    apiVersion: '2023-05-03', // use current date (YYYY-MM-DD) to target the latest API version
+    // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
+  })
+
+export async function fetchAllProductsData(){
+    const products = await client.fetch('*[_type == "product"]{nameEN, nameES, isSpicy, category, price, descriptionEN, descriptionES, customUrl, weight, isTopSeller,_id,  "imageUrl": image.asset->url}')
+    return products
 }
 
-export async function fetchProductData(id){
-    const query = encodeURIComponent(`*[_type == 'product' && _id == '${id}']{nameEN, nameES, isSpicy, category, price, descriptionEN, descriptionES, weight, isTopSeller,_id, "imageUrl": image.asset->url}`);
+export async function fetchProductByURL(url){
+    const product = await client.fetch(`*[_type == 'product' && customUrl == '${url}']{nameEN, nameES, isSpicy, category, price, descriptionEN, descriptionES, customUrl, weight, isTopSeller,_id, "imageUrl": image.asset->url}`)
+    return product
+}
 
-    try {
-        const response = await fetch(`${URL}${query}`);
-        return response.json();
-    } catch (error) {
-        console.log(error)
-    }
+//* example of usage:
+async function getProductInfoByUrl(url){
+	try {
+		const data = await fetchProductByURL(url);
+		console.log('data about the product by URL: ', data)
+	} catch (error) {
+		console.log(error);
+	}
+}
+
+getProductInfoByUrl("set-philadelphia")
+
+
+
+export async function fetchProductDataById(id){
+    const product = await client.fetch(`*[_type == 'product' && _id == '${id}']{nameEN, nameES, isSpicy, category, price, descriptionEN, descriptionES, customUrl, weight, isTopSeller,_id, "imageUrl": image.asset->url}`);
+    return product
 }
 
 //* example of usage:
 async function getProductInfo(id){
 	
 	try {
-		const data = await fetchProductData(id);
+		const data = await fetchProductDataById(id);
 		console.log('data about the product: ', data)
 	} catch (error) {
 		console.log(error);
@@ -52,17 +72,7 @@ export async function fetchCustomerData(email){
     }
 }
 
-// 
-// Example of usage
-// 
-// try {
-//     const email = 'test@gmail.com'
-//     const result = await fetchCustomerData(email);
-//     console.log('customer:', result)
-//   } catch (error) {
-//     console.log(error)
-//   }
-// 
+
 
 export async function createCustomer(customerData){
     const query = encodeURIComponent(`*[_type == 'customer'][email == '${email}']`);

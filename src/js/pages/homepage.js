@@ -1,6 +1,7 @@
 import '../../styles/main.scss';
 import '../components/menu';
 import { fetchAllProductsData, fetchProductData } from '../services/sanity-API';
+import { getProducts } from '../services/sanity-client';
 import $ from 'jquery';
 import 'slick-carousel';
 import { renderProductList } from '../components/rendering';
@@ -10,11 +11,14 @@ const bestSellersContainer = document.querySelector('.best-sellers-list');
 async function getAllRecommendProducts() {
 	try {
 		const data = await fetchAllProductsData();
+
 		renderProductList(bestSellersContainer, data.result);
+
 	} catch (error) {
 		console.log(error);
 	}
 }
+
 
 // TODO Add language logic
 
